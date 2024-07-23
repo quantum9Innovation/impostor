@@ -70,7 +70,7 @@ continue = putStrLn . disp
 destruct :: (Status s) => s -> IO () -> IO ()
 destruct status success
     | ok status = success
-    | otherwise = continue status
+    | otherwise = continue status >> success
 
 fileErr :: SomeException -> IO ()
 fileErr e = print e >> putStrLn "error: couldn't write to file"
@@ -80,7 +80,7 @@ ping [] _ = putStrLn "finished fetching all data sources"
 ping ((name, query):queries) run = do
     res <- fetch query
     case res of
-        Left e -> continue (toResponseMsg e)
+        Left e -> continue (toResponseMsg e) >> ping queries run
         Right r ->
             let status = (ResponseCode . responseStatus) r
                 runner = catch (run r name) fileErr
