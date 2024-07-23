@@ -68,7 +68,11 @@ executable impostor
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.17.2.1
+    build-depends:    base ^>=4.17.2.1,
+                      request ^>=0.2.2.0,
+                      bytestring ^>=0.11.5.3,
+                      filepath ^>=1.4.2.2,
+                      directory ^>=1.3.8.5
 
     -- Directories containing source files.
     hs-source-dirs:   app
