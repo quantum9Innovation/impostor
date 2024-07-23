@@ -1,13 +1,19 @@
+<img src="./assets/logo/impostor.png" alt="An impostor is running to the nearest polling station" width="100px" style="float:left;margin-right:20px;margin-bottom:20px;">
+
 # Impostor
 
 Pollsters poll the public, Impostor polls the pollsters.
 
 ---
 
-Impostor fetches the latest U.S. election polling data from [FiveThirtyEight](https://projects.fivethirtyeight.com/polls/), which aggregates the results of many different polls.
+Impostor[^1] fetches the latest U.S. election polling data from [FiveThirtyEight](https://projects.fivethirtyeight.com/polls/), which aggregates the results of many different polls.
 It can be run on a schedule to continuously update a local database with the latest polling data.
 
-Only current data from FiveThirtyEight is pulled, since historical data does not need to be updated regularly. This script aims to faciliatate automatic downloads of polling data at regular intervals. Historical data can be downloaded manually. For more information about polling sources, see [below](#sources).
+Only current data from FiveThirtyEight is pulled, since historical data does not need to be updated regularly. This script aims to faciliatate automatic downloads of polling data at regular intervals. Historical data can be downloaded manually instead. For more information about polling sources, see [below](#sources).
+
+## Why this name?
+
+This project was originally going to be called "pollster" or something similarly generic, but in reality it is an impostor among pollsters, since it doesn't actually conduct polls or aggregate them—it merely steals existing aggregated polls and compiles them into a local database. Also [this](http://www.parisglobalist.org/us-elections-among-us-vote-out-the-impostor/).
 
 ## Architecture
 
@@ -63,3 +69,5 @@ sudo chmod +x impostor
 ```
 
 Release artifacts can also be accessed after cloning the repository in the `/bin` directory. Look for a file named `impostor-a.b.c.d` where `a.b.c.d` is the version number of the release. Follow the [above steps](#installing) for making this file executable and running it.
+
+[^1]: Logo from <https://among-us.fandom.com/wiki/Characters?file=Character_walk_%28base_template%29.png>. Licensed under CC BY-SA 3.0 by Caburum when accessed (2024).
