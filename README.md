@@ -1,2 +1,3 @@
-# impostor
-Pollsters poll the public, impostor polls the pollsters
+# Impostor
+
+Pollsters poll the public, Impostor polls the pollsters.
